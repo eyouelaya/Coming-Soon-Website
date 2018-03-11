@@ -22,21 +22,18 @@
     background-size: cover;
 } */
 
-.appBackground {
-    position: relative;
-    background-image: url("images/background.svg");
-    background-repeat: no-repeat;
-    background-size: 100% 100vh;
-}
 
 body {
-    background: url("images/background.svg") repeat 0 0;
+    background: url("") repeat 0 0;
 }
 
 h3, h2, h1, h6 {
     text-align: center;
 }
 
-input {
-    /* width: 310px; */
+.notify {
+    margin-top: 100px;
+}
+.margins {
+    margin-top:50px;
 }

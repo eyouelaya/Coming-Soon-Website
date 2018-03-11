@@ -11,18 +11,18 @@
     
 </head>
 <body>     
-    <div class="container">  
-        <div class="">
+    <div class="margins container">  
+        <div>
             <h2>Company Name Here</h2> 
         </div>
-        <div class="">
+        <div class="margins">
             <h3>Website is under active development</h3>
         </div>
-        <div class="">
+        <div>
             <h3>we will be coming soon</h3>      
         </div>  
     </div> 
-    <div class="container">
+    <div class="margins container">
         <div class="row">
             <div class="col-lg-3 col-lg-offset-0 col-md-3 col-sm-3 col-md-offset-2 col-sm-offset-2 col-xs-offset-3 col-xs-6">
                 <h1>33</h1>
@@ -41,16 +41,38 @@
                 <h6>seconds</h6>
             </div>
         </div>
-    </div>
-    <div class="container">     
-        <form>
-            <div style="margin-top:50px;" class="col-lg-offset-4 col-md-offset-3 col-sm-offset-3">
-                <span>Input email to get notifed</span>
-                <input type="email" prompt="Email">
-                <button>Get Notifed</button>
-            
-            </div>
+    </div> 
+    <div class="notify container">     
+        <form class="form-horizontal">
+                <div class="form-group">
+                    <label for="email" class=" col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4 control-label">E-Mail Address</label>
+                
+                    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4">
+                        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+                    </div>
+                    <div class="col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-2 col-sm-2">
+                        <input class="btn btn-primary" type="button" value="Get Notified">
+                    </div>
         </form>
     </div>
 </body>
+<script> 
+    var releaseDate = new Date("Mar 20, 2018").getTime(); 
+    var x = setInterval(function(){
+        //get todays date and time
+        var now = new Date().getTime();
+        //find the distance between the now and release date
+        var distance = releaseDate - now;
+        //time calculation
+        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        var hours = Math.floor(distance % (1000 * 60 * 60 * 24))/(1000 * 60 * 60);
+        var hour = Number(Math.round(hours+'e0')+'e-0');
+        var minutes = Math.floor(distance % (1000 * 60 * 60 * 24))/(1000 * 60);
+        var minute = Number(Math.round(minutes + 'e0') + 'e-0');
+        var seconds = Math.floor(distance %(1000 * 60 * 60 * 24))/(1000);
+        var second = Number(Math.round(seconds + 'e0') + 'e-0');
+        console.log(seconds+ "hour\n");
+        console.log("days "+ days+ " hours "+hour+ " minutes "+minute+ " seconds "+second);
+    });
+</script>
 </html>

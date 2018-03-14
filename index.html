@@ -45,57 +45,27 @@
         </div>
     </div> 
     <div class="notify container">     
-        <form class="form-horizontal" action="php/mail.php" method="GET">
-                <div class="form-group">
-                    <label for="email" class=" col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4 control-label">E-Mail Address</label>
-                
-                    <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4">
-                        <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
-                    </div>
-                    <div class="col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-2 col-sm-2">
-                        <input class="btn btn-primary" type="submit" value="Get Notified">
-                    </div>
+        <form class="form-horizontal" action="php/mail.php" method="GET"> 
+                        <div class="form-group">
+                            <label for="name" class=" col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4 control-label">Name</label>
+                            <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4">
+                                <input id="email" type="text" class="form-control" name="name" placeholder="Name" required autofocus>
+                            </div> 
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class=" col-xs-offset-2 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4 control-label">E-Mail Address</label>
+                        
+                            <div class="col-xs-offset-2 col-xs-8 col-sm-offset-0 col-md-offset-0 col-md-4 col-sm-4">
+                                <input id="email" type="email" class="form-control" name="email" placeholder="Email" required autofocus>
+                            </div> 
+                        </div>  
+                        <div class="form-group">
+                            <div class="col-lg-offset-5 col-md-offset-5 col-xs-offset-3 col-xs-8 col-sm-offset-5"> 
+                                <input class="col-md-3 col-sm-3 col-xs-8 btn btn-primary" value="submit" name="submit">
+                            </div>
+                        </div>
         </form>
     </div>
 </body>
-<script> 
-    var releaseDate = new Date("Mar 30, 2018").getTime(); 
-    var sec = 1000;
-    var min = sec * 60;
-    var hr = min * 60;
-    var day = hr * 24;
-    var timer;
-    function showRemaining() {
-        var now = new Date();
-        var distance = releaseDate - now;
-        if(distance >0){
-            var days = Math.floor(distance / day);
-            var hours = Math.floor((distance % day)/ hr);
-            var minutes = Math.floor((distance % hr) / min);
-            var seconds = Math.floor((distance % min) / sec);
-            var d = document.getElementById('days');
-            var h = document.getElementById("hours");
-            var m = document.getElementById("minutes");
-            var s = document.getElementById("seconds");
-            d.innerHTML = days;
-            h.innerHTML = hours;
-            m.innerHTML = minutes;
-            s.innerHTML = seconds;
-        }
-        else{
-            var d = document.getElementById('days');
-            var h = document.getElementById("hours");
-            var m = document.getElementById("minutes");
-            var s = document.getElementById("seconds");
-            var message = document.getElementById("message");
-            d.innerHTML = "0";
-            h.innerHTML = "0";
-            m.innerHTML = "0";
-            s.innerHTML = "0";
-            message.innerHTML = "Timer Expired";
-
-        } 
-    }
-    timer = setInterval(showRemaining, 1000);        
-</script>
+<script src="js/main.js"></script>
 </html>

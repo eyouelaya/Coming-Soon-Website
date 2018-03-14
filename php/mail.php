@@ -1,5 +1,5 @@
 <?php
+    $name = $_GET['name'];
     $email = $_GET['email']; 
-    mail("eyouel@belmondocorp.tech","Notfication Request", $email);
-    header("..index.html"); 
+    
 ?>

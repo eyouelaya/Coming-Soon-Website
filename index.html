@@ -40,6 +40,9 @@
                 <h6>seconds</h6>
             </div>
         </div>
+        <div>
+            <h1 id="message"></h1>
+        </div>
     </div> 
     <div class="notify container">     
         <form class="form-horizontal" action="php/mail.php" method="GET">
@@ -70,17 +73,29 @@
             var hours = Math.floor((distance % day)/ hr);
             var minutes = Math.floor((distance % hr) / min);
             var seconds = Math.floor((distance % min) / sec);
+            var d = document.getElementById('days');
+            var h = document.getElementById("hours");
+            var m = document.getElementById("minutes");
+            var s = document.getElementById("seconds");
+            d.innerHTML = days;
+            h.innerHTML = hours;
+            m.innerHTML = minutes;
+            s.innerHTML = seconds;
         }
-        var d = document.getElementById('days');
-        var h = document.getElementById("hours");
-        var m = document.getElementById("minutes");
-        var s = document.getElementById("seconds");
-        d.innerHTML = days;
-        h.innerHTML = hours;
-        m.innerHTML = minutes;
-        s.innerHTML = seconds;
+        else{
+            var d = document.getElementById('days');
+            var h = document.getElementById("hours");
+            var m = document.getElementById("minutes");
+            var s = document.getElementById("seconds");
+            var message = document.getElementById("message");
+            d.innerHTML = "0";
+            h.innerHTML = "0";
+            m.innerHTML = "0";
+            s.innerHTML = "0";
+            message.innerHTML = "Timer Expired";
+
+        } 
     }
     timer = setInterval(showRemaining, 1000);        
-      
 </script>
 </html>

@@ -16,15 +16,12 @@
     background-image: url("images/image1.jpg");
 }
 
-/* body {
-    background-image: url("images/background.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-} */
-
-
 body {
-    background: url("") repeat 0 0;
+    background-image: url("../images/image.jpg");
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    color: white;
 }
 
 h3, h2, h1, h6 {
@@ -34,6 +31,7 @@ h3, h2, h1, h6 {
 .notify {
     margin-top: 100px;
 }
+
 .margins {
-    margin-top:50px;
-}
+    margin-top: 50px;
+} 
